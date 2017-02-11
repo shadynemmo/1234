@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+
+<html dir="rtl" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>يتعذر الوصول لهذه الصفحة</title>
+    <link rel="stylesheet" type="text/css" href="ErrorPageStyles.css">
+    <script src="ms-appx-web:///Assets/ErrorPages/ErrorPageScripts.js" language="javascript" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        var L_Unavailable_Title_TEXT = "يتعذر الوصول لهذه الصفحة"; // title for when user is connected to internet
+        var L_Disconnected_Title_TEXT = "أنت غير متصل"; // title for when user is disconnected from internet
+
+        window.onload = function () {
+            var url = getUrl();
+            var urlElements = document.getElementsByClassName("webpageURL");
+            for (var i = 0; i < urlElements.length; i++)
+            {
+                urlElements[i].textContent = url;
+            }
+
+            getInfo();
+            goToLocalizedErrorPage();
+        }
+
+        function getInfo()
+        {
+            //first check if user is connected to the internet
+            checkConnection();
+
+            //attach an event to detect changes in network connectivity
+            if (document.addEventListener)
+            {
+                addEventListener("offline", reportConnectionEvent, false);
+            }
+            else
+            {
+                attachEvent("onoffline", reportConnectionEvent);
+            }
+
+            //set events to fire
+            document.body.ononline = reportConnectionEvent;
+            document.body.onoffline = reportConnectionEvent;
+        }
+
+        function checkConnection()
+        {
+            var notConnected = document.getElementById("NotConnected");
+            var pageUnavailable = document.getElementById("PageUnavailable");
+
+            if (navigator.onLine) //the network connection is connected
+            {
+                document.title = L_Unavailable_Title_TEXT;
+
+                notConnected.style.display = "none";
+                pageUnavailable.style.display = "";
+            }
+            else // no internet
+            {
+                document.title = L_Disconnected_Title_TEXT;
+
+                notConnected.style.display = "";
+                pageUnavailable.style.display = "none";
+            }
+        }
+
+        function reportConnectionEvent(e)
+        {
+            if (!e) e = window.event;
+
+            if ('online' == e.type)
+            {
+                setTimeout ( "clickRefresh()", 1000 ); //using a setTimeout to account for any lag between us getting the connected event and the machine obtaining an IP
+            }
+            else if ('offline' == e.type)
+            {
+                checkConnection();
+            }
+            else
+            {
+                checkConnection();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="Wrapper">
+        <div id="PageUnavailable">
+            <table>
+                <tr>
+                    <td>
+                        <span id="icon">&#x0EB7D;</span>
+                    </td>
+                    <td>
+                        <h1 id="dnserror_unavailable_header">لا يمكننا الوصول لهذه الصفحة.</h1>
+                        <p id="dnserror_unavailable_body">جرّب هذا</p>
+                        <ul>
+                            <li><id id="dnserror_unavailable_righturl">تأكد من حصولك على عنوان URL الصحيح:</id> <span class="webpageURL"></span></li>
+                            <li><a href="#" onclick="clickRefresh(); return false;"><id id="dnserror_unavailable_refresh">قم بتحديث الصفحة</id></a></li>
+                            <li><a href="#" onclick="clickSearch(); return false;"><id id="dnserror_unavailable_search">ابحث عن ما تريده</id></a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="NotConnected">
+            <table>
+                <tr>
+                    <td>
+                        <span id="icon">&#x0EB7C;</span>
+                    </td>
+                    <td>
+                        <h1 id="dnserror_offline_header">أنت غير متصل</h1>
+                        <p id="dnserror_offline_body1">والويب ليس نفسه بدونك. </p>
+                        <p id="dnserror_offline_body2">دعنا نعيد اتصالك بالإنترنت مجدداً</p>
+                        <ul>
+                            <li><id id="dnserror_offline_checkcables">تأكد من توصيل كبلات الشبكة.</id></li>
+                            <li><id id="dnserror_offline_airplanemode">تأكد من أنك لست في وضع الطائرة.</id></li>
+                            <li><id id="dnserror_offline_wirelessswitch">تأكد مما إذا كان مبدل اللاسلكي قيد التشغيل.</id></li>
+                            <li><id id="dnserror_offline_restartrouter">أعد تشغيل جهاز التوجيه.</id></li>
+                        </ul>
+                        <br />
+                        <button class="pushbutton" type="submit" onclick="window.location='ms-settings:network-wifi'"><id id="dnserror_offline_networksettings">الانتقال إلى إعدادات الشبكة</id></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+
+<html dir="rtl" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>Internet Explorer مطلوب</title>
+    <link rel="stylesheet" type="text/css" href="ErrorPageStyles.css">
+    <script src="ms-appx-web:///Assets/ErrorPages/ErrorPageScripts.js" language="javascript" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+
+        window.onload = function () {
+            // Populate checkbox
+            var url = getUrl();
+            if (IsTopLevel())
+            {
+                if (IsEnterprise())
+                {
+                    var autoLaunch = true;
+                    if (HasState(url))
+                    {
+                        autoLaunch = GetState(url);
+                    }
+                    if (autoLaunch)
+                    {
+                        SetState(getUrl(), true);
+                        LaunchIE(true);
+                    }
+
+                    // Set the checkbox value
+                    document.getElementById("autolaunch").checked = autoLaunch;
+
+                    // Show the enterprise string
+                    document.getElementById("needie_body").style.display = "none";
+                    document.getElementById("needie_configured_automatic_open").style.display = "inline";
+                }
+                else // consumer page
+                {
+                    // Hide the checkbox
+                    document.getElementById("checkboxTable").style.display = "none";
+
+                    // Show Consumer string
+                    document.getElementById("needie_body").style.display = "inline";
+                    document.getElementById("needie_configured_automatic_open").style.display = "none";
+                }
+            }
+            else
+            {
+                // Hide the checkbox, button, and "continue" link in iframes
+                document.getElementById("checkboxTable").style.display = "none";
+                document.getElementById("launchIE").style.display = "none";
+                document.getElementById("ContinueInSpartan").style.display = "none";
+            }
+
+            // Populate ContinueInSpartan link
+            document.getElementById("ContinueInSpartan").href = getFullUrl();
+
+            goToLocalizedErrorPage();
+        }
+
+        getFullUrl = function ()
+        {
+            var docUrl = document.location.href;
+            var beginIndex = docUrl.indexOf('#') + 1;
+            return docUrl.substring(beginIndex);
+        }
+
+        // Returns the code for why we navigated to NeedIE:
+        // 0 = No transition/Error
+        // 1 = EMIE Site List
+        // 2 = Intranet Policy is set
+        // 3 = Cloud CV List
+        // 4 = Keep in Spartan
+        getReason = function ()
+        {
+            var docUrl = document.location.href;
+            var reasonStr = '?reason=';
+            var beginIndex = docUrl.indexOf(reasonStr) + reasonStr.length;
+            var lastIndex = docUrl.indexOf('#');
+            // Check that the '?reason=' comes before '#<url>', so that we aren't searching the error url
+            if (beginIndex < lastIndex)
+            {
+                return docUrl.charAt(beginIndex);
+            }
+            return 0;
+        }
+
+        IsEnterprise = function ()
+        {
+            // If NeedIE is showing because the URL was Enterprise SiteList (1) or
+            // the IntranetToIE policy is set (2), we want the Enterprise experience
+            var reason = getReason();
+            return (reason == 1 || reason == 2);
+        }
+
+        IsTopLevel = function ()
+        {
+            return (window.top == window.self);
+        }
+
+        // Returns true if we have state saved in registry for this site
+        HasState = function (url)
+        {
+            return window.external.HasNeedIEAutoLaunchFlag(url);
+        }
+
+        // Get the auto-launch preference from registry
+        GetState = function (url)
+        {
+            return window.external.GetNeedIEAutoLaunchFlag(url);
+        }
+
+        // Set the auto-launch preference from registry
+        SetState = function (url, state)
+        {
+            window.external.SetNeedIEAutoLaunchFlag(url, state);
+        }
+        
+        LaunchIE = function (automated)
+        {
+            window.external.LaunchIE(getFullUrl(), automated);
+        }
+
+        OnAutoLaunchClicked = function (checkbox)
+        {
+            SetState(getUrl(), checkbox.checked);
+        }
+
+        // Launch URL in IE
+        OnLaunchIEClicked = function ()
+        {
+            SetState(getUrl(), document.getElementById("autolaunch").checked);
+            LaunchIE(false);
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="Wrapper">
+        <div id="NotConnected">
+            <table>
+                <tr>
+                    <td>
+                        <img id="imageicon" alt="Internet Explorer" style="font-weight:normal" src="ielogo.svg"/>
+                    </td>
+                    <td>
+                        <h1 id="needie_header">يحتاج هذا الموقع إلى Internet Explorer</h1>
+                        <p id="needie_body">
+                            يستخدم موقع الويب هذا التقنية التي تعمل بشكل أفضل في Internet Explorer.
+                        </p>
+                        <p id="needie_configured_automatic_open" style="display:none">قامت مؤسستك بتعيين هذا الموقع ليعمل تلقائياً في Internet Explorer.</p>
+                        <br />
+                        <button id="launchIE"
+                                class="pushbutton"
+                                type="submit"
+                                onclick="OnLaunchIEClicked();">
+                            <id id="needie_open_in_ie">افتح باستخدام Internet Explorer</id>
+                        </button>
+                        <table id="checkboxTable" style="margin:16px 0px 0px 0px">
+                            <tr>
+                                <td class="checkboxes">
+                                    <label>
+                                        <input type="checkbox" id="autolaunch" onclick="OnAutoLaunchClicked(this);" />
+                                        <span class="text-body">
+                                            <id id="needie_automatically_open">افتح هذا الموقع باستخدام Internet Explorer تلقائيًا في المستقبل</id>
+                                        </span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <br />
+                        <br />
+                        <a id="ContinueInSpartan" href=""><id id="needie_open_in_spartan">استمر في الانتقال إلى Microsoft Edge</id></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html> 

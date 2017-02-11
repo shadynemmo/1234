@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Accountant Center</title>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.corner.js"></script>
+<script type="text/javascript" src="ac.js"></script>
+<link rel="stylesheet" href="jq.css" type="text/css" media="print, projection, screen"></link>
+<link rel="stylesheet" type="text/css" href="ac.css"></link>
+<link rel="stylesheet" type="text/css" href="qbw.css"></link>
+</head>
+<body style="background-color:#eeeeee;">
+<h1 id="titleBar">Accountant Center</h1>
+<div id="left_child">
+<div class="box">
+<table class="WidgetHeader">
+<tr>
+<td width="40"><img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\ToolsIcon.png"/></td>
+<td class="WidgetHeaderText">Tools</td>
+<td><span class="customize"><a href="qbks://qbw:CustomizeAccountantCenterToolsWidget/">Customize</a></span>
+</td>
+</tr>
+</table>
+<p/><p/>
+<hr/>
+<p></p>
+<table class="gridtable">
+<thead>
+<tr id="HeaderRow">
+<th noWrap="yes" class="daHead"><P class="tableHeader"></P></th>
+<th noWrap="yes" class="daHead"><P class="tableHeader"></P></th>
+</tr>
+</thead>
+<tr>
+<td class="LeftHighlight" width="1000">
+<span class="FixedRowStyle"><a href="qbks://qbw:bet?listname=check">Batch Enter Transactions...</a></span>
+</td>
+<td class="LeftHighlight" width="1000">
+<span class="FixedRowStyle"><a href="qbks://qbw:reclassify_txn">Reclassify Transactions</a></span>
+</td>
+</tr>
+<tr>
+<td class="LeftNoHighlight" width="1000">
+<span class="FixedRowStyle"><a href="qbks://qbw:genjrnl">Make General Journal Entries...</a></span>
+</td>
+<td class="LeftNoHighlight" width="1000">
+<span class="FixedRowStyle"><a href="qbks://qbw:unlinked_txn_window?View=Invoices">Fix Unapplied Customer Payments and Credits</a></span>
+</td>
+</tr>
+<tr>
+<td class="LeftHighlight" width="1000">
+<span class="FixedRowStyle"><a href="qbks://qbw:workingTrialBalance">Working Trial Balance</a></span>
+</td>
+<td class="LeftHighlight" width="1000">
+<span class="FixedRowStyle"><a href="qbks://qbw:batch_writeoff">Write Off Invoices</a></span>
+</td>
+</tr>
+<tr>
+<td class="LeftNoHighlight" width="1000">
+<span class="FixedRowStyle"><a href="qbks://qbw:preferences?tab=Accounting">Set Closing Date...</a></span>
+</td>
+<td class="LeftNoHighlight" width="1000">
+<span class="FixedRowStyle"><a href="qbks://qbw:fix_salestax">Fix Incorrectly Recorded Sales Tax</a></span>
+</td>
+</tr>
+<tr>
+<td class="LeftHighlight" width="1000">
+<span class="FixedRowStyle"><a href="qbks://qbw:qfm">QuickBooks File Manager</a></span>
+</td>
+<td class="LeftHighlight" width="1000">
+<span class="FixedRowStyle"><a href="qbks://qbw:launch_Pff_center">Client Data Review</a></span>
+</td>
+</tr>
+</table>
+<table border="0" align="center" style="margin-top:12px;">
+<tr>
+<td align="center"><a href="qbks://qbw:browser?url=http://bit.ly/HUYaw0&amp;external=Y" class="widgetLink"><b>TIP:  How to Batch Enter Transactions in QuickBooks</a></td>
+</tr>
+</table>
+<p style="margin-top:-5px;"></p>
+</div>
+<p></p>
+<div class="box">
+<table class="WidgetHeader">
+<tr>
+<td width="40"><img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\ReconcilIcon.png"/></td>
+<td class="WidgetHeaderText">Reconciliation</td>
+<td><span class="refresh"><a href="qbks://qbw:accountantCenter">Refresh</a></span></td>
+</tr>
+</table>
+<p/><p/>
+<hr/>
+<table class="gridtable">
+<thead>
+<tr id="HeaderRow">
+<th noWrap="yes" style="Width:40%"><P class="tableHeader">Account</P></th>
+<th noWrap="yes" style="Width:20%"><P class="tableHeader">Last Reconciled</P></th>
+<th noWrap="yes" style="Width:20%"><P class="tableHeader">Reconciled Balance</P></th>
+<th noWrap="yes" style="Width:20%"><P class="tableHeader">Current Balance</P></th>
+</tr>
+</thead>
+<tr>
+<td class="LeftHighlight"><span class="FixedRowStyle">
+<a href="&#xA;                    qbks://qbw:OpenRegisterWithRecNum?recNum=32">Bank of Conrok</a>
+</span></td>
+<td class="LeftHighlight"><span class="FixedRowStyle">
+<center>
+<a href="qbks://qbw:prev_recon_report"></a>
+</center>
+</span></td>
+<td class="RightHighlight" width="1000"><span class="FixedBalanceRowStyle">0.00</span></td>
+<td class="RightHighlight"><span class="FixedBalanceRowStyle">2,151,415.00</span></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><span class="FixedRowStyle">
+<a href="&#xA;                    qbks://qbw:OpenRegisterWithRecNum?recNum=21">Cash</a></span></td>
+<td class="LeftNoHighlight"><span class="FixedRowStyle">
+<center>
+<a href="qbks://qbw:prev_recon_report"></a>
+</center>
+</span></td>
+<td class="RightNoHighlight"><span class="FixedBalanceRowStyle">1,151,739.00</span></td>
+<td class="RightNoHighlight"><span class="FixedBalanceRowStyle">180,773.50</span></td>
+</tr>
+<tr>
+<td class="LeftHighlight"><span class="FixedRowStyle">
+<a href="&#xA;                    qbks://qbw:OpenRegisterWithRecNum?recNum=22">Zenith Crusher Sales</a>
+</span></td>
+<td class="LeftHighlight"><span class="FixedRowStyle">
+<center>
+<a href="qbks://qbw:prev_recon_report"></a>
+</center>
+</span></td>
+<td class="RightHighlight" width="1000"><span class="FixedBalanceRowStyle">113,147.00</span></td>
+<td class="RightHighlight"><span class="FixedBalanceRowStyle">341,712.60</span></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><span class="FixedRowStyle">
+<a href="&#xA;                    qbks://qbw:OpenRegisterWithRecNum?recNum=23">Zenith Amasiri</a></span></td>
+<td class="LeftNoHighlight"><span class="FixedRowStyle">
+<center>
+<a href="qbks://qbw:prev_recon_report"></a>
+</center>
+</span></td>
+<td class="RightNoHighlight"><span class="FixedBalanceRowStyle">62,547.00</span></td>
+<td class="RightNoHighlight"><span class="FixedBalanceRowStyle">5,037,088.00</span></td>
+</tr>
+<tr>
+<td class="LeftHighlight"><span class="FixedRowStyle">
+<a href="&#xA;                    qbks://qbw:OpenRegisterWithRecNum?recNum=24">ECO NRW</a>
+</span></td>
+<td class="LeftHighlight"><span class="FixedRowStyle">
+<center>
+<a href="qbks://qbw:prev_recon_report"></a>
+</center>
+</span></td>
+<td class="RightHighlight" width="1000"><span class="FixedBalanceRowStyle">917,923.00</span></td>
+<td class="RightHighlight"><span class="FixedBalanceRowStyle">876,507.00</span></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><span class="FixedRowStyle">
+<a href="&#xA;                    qbks://qbw:OpenRegisterWithRecNum?recNum=31">Other NGN</a></span></td>
+<td class="LeftNoHighlight"><span class="FixedRowStyle">
+<center>
+<a href="qbks://qbw:prev_recon_report"></a>
+</center>
+</span></td>
+<td class="RightNoHighlight"><span class="FixedBalanceRowStyle">0.00</span></td>
+<td class="RightNoHighlight"><span class="FixedBalanceRowStyle">16,665,311.30</span></td>
+</tr>
+</table>
+<p style="margin-top: -3px;"></p>
+<table width="100%">
+<tr>
+<td width="40">
+<a href="qbks://qbw:reconcile">
+<img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\Reconcile.png" style="border-style:none;vertical-align: bottom;"/>
+</a>
+</td>
+<td></td>
+</tr>
+</table>
+</div>
+<p style="margin-bottom:12px;"></p>
+<label for="showHideAC">
+<input type="checkbox" onclick="toggleState();" name="showHideAC" value="show" checked="Y" id="showHideAC"></input>
+            Show Accountant Center when opening a company file
+          </label>
+</div>
+<div id="right_child">
+<div class="box">
+<table class="WidgetHeader">
+<tr>
+<td width="40">
+<img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\Reports.png"/>
+</td>
+<td class="WidgetHeaderText">Memorized Reports</td>
+</tr>
+</table>
+<p/><p/>
+<hr/>
+<p/>
+<table width="100%" class="gridtable">
+<thead>
+<tr id="HeaderRow">
+<th noWrap="yes"><P class="tableHeader"></P></th>
+</tr>
+</thead>
+<tr>
+<td>
+<p/>
+<div class="tableHeader" style="float:left;padding-left:8px;padding-right:8px;">Select Group</div>
+<div><select style="width:70%; background-color: #f0f0f0;" onchange="showS(this.selectedIndex)" class="ReportSelector">
+<option value="1">Accountant</option>
+<option value="2">Banking</option>
+<option value="3">Company</option>
+<option value="4">Customers</option>
+<option value="5">Nonprofit</option>
+<option value="6">Vendors</option>
+</select>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<p style="margin-top: 14px;"></p>
+<div id="container" class="FixedRowStyle">
+<table width="100%">
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483624">Adjusted Trial Balance</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483625">Adjusting Journal Entries</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483628">Balance Sheet</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483626">General Ledger</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483629">Journal Entries Entered/Modified Today</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483627">Profit  Loss</a></td>
+</tr>
+<tr>
+<td height="5">
+<tr></tr>
+</td>
+<td class="LeftNoHighlight">
+<a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483630" style="float:left;">
+<img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\DisplayPrint.png" style="border-style:none;vertical-align: bottom; margin-bottom:1px;"/>
+</a>
+</td>
+</tr>
+</table>
+<table width="100%">
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483646">Check Detail</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483645">Deposit Detail</a></td>
+</tr>
+<tr>
+<td height="5">
+<tr></tr>
+</td>
+<td class="LeftNoHighlight">
+<a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483647" style="float:left;">
+<img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\DisplayPrint.png" style="border-style:none;vertical-align: bottom; margin-bottom:1px;"/>
+</a>
+</td>
+</tr>
+</table>
+<table width="100%">
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483632">Balance Sheet</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483633">Profit  Loss</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483631">Statement of Cash Flows</a></td>
+</tr>
+<tr>
+<td height="5">
+<tr></tr>
+</td>
+<td class="LeftNoHighlight">
+<a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483634" style="float:left;">
+<img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\DisplayPrint.png" style="border-style:none;vertical-align: bottom; margin-bottom:1px;"/>
+</a>
+</td>
+</tr>
+</table>
+<table width="100%">
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483636">A/R Aging Summary</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483637">Customer Balance Detail</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483638">Customer Balance Summary</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483635">Open Invoices</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483611">Sales by Customer Detail</a></td>
+</tr>
+<tr>
+<td height="5">
+<tr></tr>
+</td>
+<td class="LeftNoHighlight">
+<a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483639" style="float:left;">
+<img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\DisplayPrint.png" style="border-style:none;vertical-align: bottom; margin-bottom:1px;"/>
+</a>
+</td>
+</tr>
+</table>
+<table width="100%">
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483622">Biggest Donors/Grants</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483621">Budget vs. Actual by Donors/Grants</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483620">Budget vs. Actual by Program/Projects</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483619">Donors/Grants Report</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483618">Programs/Projects Report</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483617">Statement of Financial Income and Expense</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483616">Statement of Financial Position</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483615">Statement of Functional Expenses (990)</a></td>
+</tr>
+<tr>
+<td height="5">
+<tr></tr>
+</td>
+<td class="LeftNoHighlight">
+<a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483623" style="float:left;">
+<img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\DisplayPrint.png" style="border-style:none;vertical-align: bottom; margin-bottom:1px;"/>
+</a>
+</td>
+</tr>
+</table>
+<table width="100%">
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483641">A/P Aging Summary</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483640">Unpaid Bills Detail</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483642">Vendor Balance Detail</a></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483643">Vendor Balance Summary</a></td>
+</tr>
+<tr>
+<td height="5">
+<tr></tr>
+</td>
+<td class="LeftNoHighlight">
+<a href="qbks://qbw:memorized_rpt?RecordNumber=-2147483644" style="float:left;">
+<img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\DisplayPrint.png" style="border-style:none;vertical-align: bottom; margin-bottom:1px;"/>
+</a>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<p></p>
+<div class="box">
+<table class="WidgetHeader">
+<tr>
+<td width="40">
+<img src="C:\Program Files (x86)\Intuit\QuickBooks Enterprise Solutions 15.0\Components\Accountant\Alerts.png"/>
+</td>
+<td class="WidgetHeaderText">Accountant Updates</td>
+</tr>
+</table>
+<p/><p/>
+<hr/>
+<table class="gridtable">
+<thead>
+<tr id="HeaderRow">
+<th noWrap="yes"><P class="tableHeader">Message</P></th>
+</tr>
+</thead>
+<tr>
+<td class="LeftHighlight"><span class="FixedRowStyle"><a href="qbks://qbw:browser?url=http://blog.accountants.intuit.com/newsletter/intuit-accounting-newsletter-december-2015/&amp;external=Y">Intuit® Accounting Newsletter: December 2015</a></span></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><span class="FixedRowStyle"><a href="qbks://qbw:browser?url=http://blog.accountants.intuit.com/ways-to-be-more-productive/how-to-get-a-grip-on-expenses/&amp;external=Y">How to Get a Grip on Expenses</a></span></td>
+</tr>
+<tr>
+<td class="LeftHighlight"><span class="FixedRowStyle"><a href="qbks://qbw:browser?url=http://blog.accountants.intuit.com/canada-corner/how-to-use-the-off-season-to-prepare-for-tax-season/&amp;external=Y">How to Use the Off Season to Prepare for Tax Season</a></span></td>
+</tr>
+<tr>
+<td class="LeftNoHighlight"><span class="FixedRowStyle"><a href="qbks://qbw:browser?url=http://blog.accountants.intuit.com/ways-to-grow-your-business/how-to-give-great-service-and-win-more-business/&amp;external=Y">How to Give Great Service and Win More Business</a></span></td>
+</tr>
+</table>
+<p style="margin-top: -3px;"></p>
+<table width="100%">
+<tr>
+<td align="right" style="padding-top:7px;">
+<a href="qbks://qbw:browser?url=http://accountant.intuit.com/QBA-AccountantCenter-Learn-QBPAP&amp;external=Y" class="widgetLink">Learn about the QuickBooks ProAdvisor Program</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="popup" class="popup_block">
+<h2>
+<span>
+            Welcome to the Accountant Center</span>
+<br/>
+<span style="color:#505050; font-family:Arial; font-size:15px;">All the tools you need to serve your clients</span>
+</h2>
+</div>
+</body>
+</html>
